@@ -19,7 +19,7 @@ npm install typescript ts-node-dev @types/node tsconfig-paths -D
 
 yarn add typescript ts-node-dev @types/node tsconfig-paths -D
 ```
-- Foi adicionado o pacote tsconfig-paths para também ser instalado. Esse pacote servirá para criação de atalhos para os paths de arquivos ao usar o import.
+- Foi adicionado o pacote `tsconfig-paths` para também ser instalado. Esse pacote servirá para criação de atalhos para os paths de arquivos ao usar o `import`.
 ---
 - Criar o arquivo "`tsconfig.json`" que conterá as configurações do Typescript, com o comando:
 
