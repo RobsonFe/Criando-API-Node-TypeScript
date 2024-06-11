@@ -1,6 +1,7 @@
 # Criando-API-Node-TypeScript
 
-- Nesse README mostro como criar uma API Node com TypeScript
+- Nesse README mostro como criar uma API Node com TypeScript.
+- Seguindo esse passo a passo, voce será capaz de utilizar a configuração que geralmente utilizo nos meus projetos em Node.
 ---
 ## Iniciar a aplicação Node.js com Typescript
 ```node
@@ -195,6 +196,54 @@ yarn dev
 
 --- 
 
-Autor: [Jorge Aluizio Alves de Souza](https://www.linkedin.com/in/jorgealuizio/) 
-<br>
-Editado por: [Robson Ferreira](https://github.com/RobsonFe)
+# EditorConfig
+## O Editor Config é uma ferramenta que auxilia na padronização da configuração para vários desenvolvedores trabalhando em um mesmo projeto, mas em diferentes editores de código ou IDE's.
+
+- O Editor Config é uma ferramenta que auxilia na padronização da configuração para vários desenvolvedores trabalhando em um mesmo projeto, mas em diferentes editores de código ou IDE's.
+```vscode
+Instalar no VSCode a extensão EditorConfig for VS Code.
+```
+
+Depois de instalada, ao clicar com o botão direito sobre o explorador de arquivos do projeto vamos selecionar a opção `Generate .editorconfig.`
+
+E a execução dessa opção deve gerar um arquivo `.editorconfig` com o seguinte conteúdo:
+
+```vscode
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = false
+insert_final_newline = false
+```
+Nesse arquivo podemos ver algumas opções como o tipo de indentação, o tamanho da indentação, qual o charset que está sendo utilizado e algumas outras configurações.
+
+O que vamos modificar nesse arquivo são apenas as opções, `trim_trailing_whitespace` e `insert_final_newline`, que devem ser modificadas de `false` para `true` e pessoalmente gosto de utilizar o `indent_size = 4` .
+
+Além de adicionar uma última opção, a `end_of_line = lf` , para garantir que as quebras de linha sejam padronizadas, pois em linguagem de código, no Windows o final das linhas são representadas por `\r\n` , já no Linux é apenas com `\n` , e para evitar que isso gere algum tipo de problema ao mudar de Sistema Operacional, essa opção é adicionada.
+
+O arquivo final vai ficar assim:
+
+```vscode
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = crlf
+charset = utf-8
+trim_trailing_whitespace = false
+insert_final_newline = true
+end_of_line = lf
+```
+---
+
+Autor: [Robson Ferreira](https://github.com/RobsonFe) 
