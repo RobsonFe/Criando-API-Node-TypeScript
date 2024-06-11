@@ -346,7 +346,94 @@ Vamos configurar outro script com a opção `--fix`.
 }
 ```
 
+# Prettier
 
+## Prettier é um formatador de código opinativo e, em conjunto com o ESLint, forma uma parceria perfeita para nós, desenvolvedores.
+
+--- 
+
+## Instalação e Configuração do Prettier
+
+Prettier é um formatador de código opinativo e, em conjunto com o ESLint, forma uma parceria perfeita para nós, desenvolvedores:
+
+- ESLint define as convenções de código.
+- Prettier realiza a formatação automática com base nas regras ESLint.
+
+Instalação:
+
+```vscode
+
+yarn add prettier -D
+```
+
+Criar o arquivo .prettierrc com uma configuração básica do Prettier:
+
+```json
+{
+  "semi": true,
+  "trailingComma": "all",
+  "singleQuote": true,
+  "printWidth": 80,
+  "arrowParens": "avoid"
+}
+```
+
+Os parâmetros são:
+
+`semi:` definido como `true`, significa que o Prettier adicionará ponto-e-vírgulas quando necessário.
+
+`trailingComma:` definido como `all`, significa que o Prettier colocará vírgulas no final dos objetos.
+
+`singleQuote:` definido como `true`, significa que o Prettier usará automaticamente aspas simples em vez de aspas duplas.
+
+`printWidth:` definido como `80`, especifica que a impressora quebrará todas as linhas que excederem 80 caracteres.
+
+É fundamental que extensão `Prettier – Code Formatter` esteja instalada no `VSCode`, pois permitirá a formatação automática do código ao salvar o arquivo.
+
+Verifique se a sua configuração do `VS Code` possui os parâmetro:
+
+```json
+"editor.formatOnPaste": true,
+"editor.formatOnType": true,
+"formattingToggle.affects": ["formatOnSave"]
+```
+Essas configurações formatarão seu código quando você colar o novo código e quando você salvar o código de qualquer extensão de arquivo que o Prettier entende.
+
+## Configurando o Prettier para trabalhar com ESLint
+
+Com ESLint e Prettier já instalados, instale esses dois pacotes também:
+
+```vscode
+yarn add eslint-config-prettier@6.15.0 eslint-plugin-prettier@3.2.0 -D
+```
+
+`eslint-config-prettier`: Desativa todas as regras ESLint que têm o potencial de interferir com as regras do Prettier.
+
+`eslint-plugin-prettier`: Transforma regras do Prettier em regras ESLint.
+
+Ajustar o arquivo `.eslintrc`:
+
+```vscode
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "prettier/prettier": "error"
+  }
+}
+```
 
 ---
 
